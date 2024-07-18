@@ -1,3 +1,4 @@
+#PART 1
 # create the initial variables below
 age = 28
 sex = 0
@@ -36,7 +37,9 @@ print("The in change in estimated cost for being male instead of female is " + s
 
 #Older people tend to have higher estimated insurance costs. Higher BMIs are associated with higher estimated insurance cost. Men tend to have lower medical costs on average than women.
 
-#Tidy up code with function
+----------------------------------------
+
+#PART 2: Tidy up code with function
 # Create calculate_insurance_cost() function below: 
 def calculate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
   estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
@@ -51,3 +54,26 @@ omar_insurance_cost = calculate_insurance_cost("Omar", 35, 1, 22.2,1, 0)
 
 # Estimate my own insurance cost
 ziling_insuance_cost = calculate_insurance_cost("Ziling", 20, 0, 21.3, 0, 0)
+
+----------------------------------------
+
+#PART 3: Implement Booleans
+# smoker function
+def analyze_smoker(smoker_status):
+  if smoker_status == 1:
+    print("To lower your cost, you should consider quitting smoking.")
+  else:
+    print("Smoking is not an issue for you.")
+
+# Function to estimate insurance cost (no bmi):
+def estimate_insurance_cost(name, age, sex, num_of_children, smoker):
+  estimated_cost = 400*age - 128*sex + 425*num_of_children + 10000*smoker - 2500
+  print("The estimated insuance cost for " + name + " is " + str(estimated_cost) + " dollars.")
+  analyze_smoker(smoker)
+  return estimated_cost
+ 
+# Estimate Keanu's insurance cost
+keanu_insurance_cost = estimate_insurance_cost(name = 'Keanu', age = 29, sex = 1, num_of_children = 3, smoker = 1)
+
+# Analyze your own insurance cost Ziling's insurance cost
+ziling_insuance_cost = estimate_insurance_cost("Ziling", 20, 0, 0, 0)
