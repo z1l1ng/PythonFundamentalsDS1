@@ -104,12 +104,10 @@ estimated_costs = [4222.0, 5442.0, 36368.0]
 
 insurance_data = list(zip(names, insurance_costs))
 
+# Append insurance data
 estimated_insurance_data = []
-
 estimated_insurance_data.append(("Maria", maria_insurance_cost))
-
 estimated_insurance_data.append(("Rohan", rohan_insurance_cost))
-
 estimated_insurance_data.append(("Valentina",  valentina_insurance_cost))
 
 print("Here is the estimated insurance cost data: " + str(estimated_insurance_data))
@@ -119,18 +117,13 @@ print("Here is the actual insurance cost data" + str(insurance_data))
 # Extra 
 # Insurance cost difference
 maria_cost_difference = estimated_insurance_data[0][1]-insurance_data[0][1]
-
 rohan_cost_difference = estimated_insurance_data[1][1]-insurance_data[1][1]
-
 valentina_cost_difference = estimated_insurance_data[2][1]-insurance_data[2][1]
 
-# Create insurance cost list
+# Append insurance cost list
 insurance_cost_difference = []
-
 insurance_cost_difference.append(("Maria", maria_cost_difference))
-
 insurance_cost_difference.append(("Rohan", rohan_cost_difference))
-
 insurance_cost_difference.append(("Valentina",  valentina_cost_difference))
 
 print("Here is the difference in estimated insurance cost and actual insurance cost " + str(insurance_cost_difference))
