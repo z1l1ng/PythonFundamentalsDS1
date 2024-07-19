@@ -77,3 +77,41 @@ keanu_insurance_cost = estimate_insurance_cost(name = 'Keanu', age = 29, sex = 1
 
 # Analyze your own insurance cost Ziling's insurance cost
 ziling_insuance_cost = estimate_insurance_cost("Ziling", 20, 0, 0, 0)
+
+----------------------------------------
+
+# Part 4: Lists
+def estimate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
+  estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
+  print("The estimated insuance cost for " + name + " is " + str(estimated_cost) + " dollars.")
+  return estimated_cost
+ 
+# Estimate Maria's insurance cost
+maria_insurance_cost = estimate_insurance_cost(name = "Maria", age = 31, sex = 0, bmi = 23.1, num_of_children = 1, smoker = 0)
+
+# Estimate Rohan's insurance cost
+rohan_insurance_cost = estimate_insurance_cost(name = 
+"Rohan", age = 25, sex = 1, bmi = 28.5, num_of_children = 3, smoker = 0)
+
+# Estimate Valentina's insurance cost
+valentina_insurance_cost = estimate_insurance_cost(name = "Valentina", age = 53, sex = 0, bmi = 31.4, num_of_children = 0, smoker = 1)
+
+# Create List
+names = ["Maria", "Rohan", "Valentina"]
+
+insurance_costs = [4150.0, 5320.0, 35210.0]
+
+# Use zip() & list()
+insurance_data = list(zip(names, insurance_costs))
+
+print(insurance_data)
+
+estimated_insurance_data = []
+
+estimated_insurance_data.append(maria_insurance_cost)
+
+estimated_insurance_data.append(rohan_insurance_cost)
+
+estimated_insurance_data.append( valentina_insurance_cost)
+
+print(estimated_insurance_data)
