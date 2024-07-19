@@ -81,9 +81,9 @@ ziling_insuance_cost = estimate_insurance_cost("Ziling", 20, 0, 0, 0)
 ----------------------------------------
 
 # Part 4: Lists
+# Function to estimate insurance cost:
 def estimate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
   estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
-  print("The estimated insuance cost for " + name + " is " + str(estimated_cost) + " dollars.")
   return estimated_cost
  
 # Estimate Maria's insurance cost
@@ -96,22 +96,51 @@ rohan_insurance_cost = estimate_insurance_cost(name =
 # Estimate Valentina's insurance cost
 valentina_insurance_cost = estimate_insurance_cost(name = "Valentina", age = 53, sex = 0, bmi = 31.4, num_of_children = 0, smoker = 1)
 
-# Create List
+# Create lists
 names = ["Maria", "Rohan", "Valentina"]
 
 insurance_costs = [4150.0, 5320.0, 35210.0]
+estimated_costs = [4222.0, 5442.0, 36368.0]
 
-# Use zip() & list()
 insurance_data = list(zip(names, insurance_costs))
-
-print(insurance_data)
 
 estimated_insurance_data = []
 
-estimated_insurance_data.append(maria_insurance_cost)
+estimated_insurance_data.append(("Maria", maria_insurance_cost))
 
-estimated_insurance_data.append(rohan_insurance_cost)
+estimated_insurance_data.append(("Rohan", rohan_insurance_cost))
 
-estimated_insurance_data.append( valentina_insurance_cost)
+estimated_insurance_data.append(("Valentina",  valentina_insurance_cost))
 
-print(estimated_insurance_data)
+print("Here is the estimated insurance cost data: " + str(estimated_insurance_data))
+
+print("Here is the actual insurance cost data" + str(insurance_data))
+
+# Extra 
+# Insurance cost difference
+maria_cost_difference = estimated_insurance_data[0][1]-insurance_data[0][1]
+
+rohan_cost_difference = estimated_insurance_data[1][1]-insurance_data[1][1]
+
+valentina_cost_difference = estimated_insurance_data[2][1]-insurance_data[2][1]
+
+# Create insurance cost list
+insurance_cost_difference = []
+
+insurance_cost_difference.append(("Maria", maria_cost_difference))
+
+insurance_cost_difference.append(("Rohan", rohan_cost_difference))
+
+insurance_cost_difference.append(("Valentina",  valentina_cost_difference))
+
+print("Here is the difference in estimated insurance cost and actual insurance cost " + str(insurance_cost_difference))
+
+# Estimate Akira
+names.append("Akira")
+
+insurance_costs.append(2930.0)
+
+insurance_data = list(zip(names, insurance_costs))
+
+# Print new insurance
+print("Here is the actual insurance cost data" + str(insurance_data))
