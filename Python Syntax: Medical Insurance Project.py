@@ -137,3 +137,53 @@ insurance_data = list(zip(names, insurance_costs))
 
 # Print new insurance
 print("Here is the actual insurance cost data" + str(insurance_data))
+
+----------------------------------------
+
+# Part 5: More Lists
+# Lists 
+names = ["Mohamed", "Sara", "Xia", "Paul", "Valentina", "Jide", "Aaron", "Emily", "Nikita", "Paul"]
+insurance_costs = [13262.0, 4816.0, 6839.0, 5054.0, 14724.0, 5360.0, 7640.0, 6072.0, 2750.0, 12064.0]
+
+# Adding Priscilla
+names.append("Priscilla")
+insurance_costs.append(8320.0)
+
+# Merge together both lists
+medical_records = list(zip(insurance_costs, names))
+print(medical_records)
+
+num_medical_records = len(medical_records)
+print("There are " + str(num_medical_records) + " medical records.")
+
+# Selecting list items
+first_medical_record = medical_records[0]
+print("Here is the first medical record: " + str(first_medical_record))
+
+# Sorting list items
+medical_records_sort = sorted(medical_records)
+
+print("Here are the medical records sorted by insurance cost: " + str(medical_records_sort))
+
+# Slicing
+cheapest_three = medical_records_sort[:3]
+
+print("Here are the three cheapest insurance costs in our medical records: " + str(cheapest_three))
+
+priciest_three = medical_records_sort[-3:]
+print("Here are the three most expensive insurance costs in our medical records: " + str(priciest_three))
+
+# Counting elements in a list
+occurances_paul = names.count("Paul")
+print("There are " + str(occurances_paul) + " individuals with the name Paul in our medical records. ")
+
+# Sort the medical records alphabetically by name.
+# Merge together both lists
+medical_records2 = list(zip(names, insurance_costs))
+
+medical_records2_sort = sorted(medical_records2)
+print("Here are the medical records sorted by name: " + str(medical_records2_sort))
+
+# Selecting middle five records fro alphabetical list
+middle_five_records = medical_records2_sort[3:8]
+print("Here are the middle five medical records: " + str(middle_five_records))
