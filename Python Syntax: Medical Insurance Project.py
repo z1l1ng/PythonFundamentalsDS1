@@ -184,6 +184,6 @@ medical_records2 = list(zip(names, insurance_costs))
 medical_records2_sort = sorted(medical_records2)
 print("Here are the medical records sorted by name: " + str(medical_records2_sort))
 
-# Selecting middle five records fro alphabetical list
+# Selecting middle five records from alphabetical list
 middle_five_records = medical_records2_sort[3:8]
 print("Here are the middle five medical records: " + str(middle_five_records))
