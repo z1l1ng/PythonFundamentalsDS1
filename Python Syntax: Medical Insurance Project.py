@@ -114,7 +114,7 @@ print("Here is the estimated insurance cost data: " + str(estimated_insurance_da
 
 print("Here is the actual insurance cost data" + str(insurance_data))
 
-# Extra 
+# Extra Practice: 
 # Insurance cost difference
 maria_cost_difference = estimated_insurance_data[0][1]-insurance_data[0][1]
 rohan_cost_difference = estimated_insurance_data[1][1]-insurance_data[1][1]
@@ -187,3 +187,68 @@ print("Here are the medical records sorted by name: " + str(medical_records2_sor
 # Selecting middle five records from alphabetical list
 middle_five_records = medical_records2_sort[3:8]
 print("Here are the middle five medical records: " + str(middle_five_records))
+
+----------------------------------------
+
+# Part 6: for and while loops
+# Lists
+names = ["Judith", "Abel", "Tyson", "Martha", "Beverley", "David", "Anabel"]
+estimated_insurance_costs = [1000.0, 2000.0, 3000.0, 4000.0, 5000.0, 6000.0, 7000.0]
+actual_insurance_costs = [1100.0, 2200.0, 3300.0, 4400.0, 5500.0, 6600.0, 7700.0]
+
+# Creating a for loop
+total_cost = 0
+
+for insurance_cost in actual_insurance_costs:
+  total_cost += insurance_cost
+
+average_cost = total_cost/len(actual_insurance_costs)
+
+print("Average Insurance Cost: " + str(average_cost)  + " dollars.")
+
+# Using range in loops 
+for i in range(len(names)):
+  name = names[i]
+  insurance_cost = actual_insurance_costs[i]
+  # Prints name
+  print("The insurance cost for " + name + " is " + str(insurance_cost) + " dollars.")
+  # Checks if above average
+  if insurance_cost > average_cost:
+    print("The insurance cost for " + name + " is above average.")
+  # Checks if below average
+  elif insurance_cost < average_cost:
+    print("The insurance cost for " + name + " is below average.")
+  # Checks if neither (so if it is equal to average)
+  else:
+    print("The insurance cost for " + name + " is equal to the average.")
+
+# Creating List Comprehension
+updated_estimated_costs = [insurance * 11/10 for insurance in estimated_insurance_costs]
+print(updated_estimated_costs)
+
+# Extra Practice: First for loop into a while loop
+length = len(actual_insurance_costs)
+index = 0
+total_cost2 = 0
+while index < length:
+  total_cost2 += actual_insurance_costs[index]
+  index += 1
+print("Total Insurnace Cost: " + str(total_cost2))
+
+# Extra Practice: Second for loop to calculate how far above or below the average estimated insurance cost is
+for i in range(len(names)):
+  name = names[i]
+  insurance_cost = actual_insurance_costs[i]
+  estimated_cost = estimated_insurance_costs[i]
+  difference = actual_insurance_costs[i]-estimated_insurance_costs[i]
+  # Checks if above average
+  if insurance_cost > average_cost:
+    print("The insurance cost for " + name + " is above average. The difference in estimated cost is " + str(difference))
+  # Checks if below average
+  elif insurance_cost < average_cost:
+    print("The insurance cost for " + name + " is below average. The difference in estimated cost is " + str(difference))
+  # Checks if neither (so if it is equal to average)
+  else:
+    print("The insurance cost for " + name + " is equal to the average. The difference in estimated cost is " + str(difference))
+    
+----------------------------------------
